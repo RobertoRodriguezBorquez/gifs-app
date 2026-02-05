@@ -1,0 +1,14 @@
+/* 1. Primero las fuentes (para que estén disponibles desde el inicio) */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* 2. Segundo, el motor de Tailwind v4 */
+@import "tailwindcss";
+
+/* 3. Tercero, las fuentes de datos para que Tailwind sepa qué clases escanear */
+@source "../node_modules/flowbite";
+
+/* 4. Cuarto, el plugin de Flowbite para Tailwind v4 */
+@plugin "flowbite/plugin";
+
+/* 5. Al final, el tema específico de Flowbite */
+@import "flowbite/src/themes/minimal";
