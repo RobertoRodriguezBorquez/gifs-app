@@ -29,11 +29,6 @@ export class GifsSideMenuOptions {
       subLabel: ' Buscar Gifs ',
       route: '/dashboard/search',
     },
-    {
-      icon: '',
-      label: '',
-      route: '',
-      subLabel: '',
-    },
+   
   ];
 }
