@@ -1,1 +1,37 @@
-<p>search-pagecccc works!</p>
+<div class="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+  <header class="w-full max-w-xl mb-8">
+    <h1 class="text-3xl font-semibold text-gray-800 text-center">
+      Buscador de GIFs
+    </h1>
+  </header>
+
+  <section class="w-full max-w-xl">
+    <section class="flex space-x-2">
+      <input
+        type="text"
+        id=""
+        placeholder="Busca GIFs por palabra clave"
+        (keyup.enter)="onSearch(txtSearch.value)"
+        #txtSearch
+        class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button
+        type="submit"
+        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+      >
+        Buscar
+      </button>
+    </section>
+  </section>
+
+  <section
+    id="results"
+    class="w-full max-w-xl mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4"
+  >
+    <!-- Aquí se renderizarán los GIFs encontrados -->
+    <p class="col-span-full text-center text-gray-500">
+      Introduce una búsqueda para ver resultados.
+    </p>
+    <app-gif-list [gifs]="gifs()" />
+  </section>
+</div>
