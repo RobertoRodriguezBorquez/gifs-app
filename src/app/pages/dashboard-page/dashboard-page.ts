@@ -8,5 +8,6 @@ import { GifsSideMenu } from '../../gifs/components/gifs-side-menu/gifs-side-men
     RouterOutlet,GifsSideMenu,
   ],
   templateUrl: './dashboard-page.html',
+  
 })
 export default class DashboardPage {}

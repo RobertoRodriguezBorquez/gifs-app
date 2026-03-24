@@ -1,12 +1,17 @@
- <aside
-    id="menu"
-    class="bg-gray-900 w-64 fixed left-0 top-0 h-screen z-20 overflow-y-auto text-slate-300 transition-all duration-300"
-  >
-   
-<!-- component gifs-side-menu-header -->
- <app-gifs-side-menu-header/>
-   
-<!-- component gifs-side-menu-options -->
- <app-gifs-side-menu-options/>
-   
-  </aside>
+<aside
+  id="menu"
+  class="bg-gray-900 w-64 fixed left-0 top-0 h-screen z-20 text-slate-300 transition-all duration-300 flex flex-col"
+>
+  <div class="overflow-y-auto flex-1">
+    <!-- component gifs-side-menu-header -->
+    <app-gifs-side-menu-header />
+
+    <!-- component gifs-side-menu-options -->
+    <app-gifs-side-menu-options />
+  </div>
+
+  <div class="mt-auto">
+    <!-- footer agregado en la parte inferior del menú -->
+    <app-footer></app-footer>
+  </div>
+</aside>
