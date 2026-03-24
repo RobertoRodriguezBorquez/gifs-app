@@ -1,9 +1,8 @@
 <!-- <app-gif-list [gifs]="gifService.trendingGifs()" /> -->
 
 <div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
-  (scroll)="onScroll($event)
-"
+  class="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-4 gap-4 p-6"
+  (scroll)="onScroll($event)"
   #grupDiv
 >
   @for (group of gifService.trendingGifGroup() ; track $index) {
@@ -11,7 +10,7 @@
     @for (gif of group; track gif.id) {
     <div>
       <img
-        class="h-full w-full rounded-base object-cover"
+        class="h-full w-full object-cover rounded-lg"
         [src]="gif.url"
         [alt]="gif.tittle"
       />

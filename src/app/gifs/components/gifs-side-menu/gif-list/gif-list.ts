@@ -1,14 +1,19 @@
-import { Component, input } from '@angular/core';
-import { GifListItems } from "./gif-list-items/gif-list-items";
+import { Component, computed, input } from '@angular/core';
 import { Gif } from 'src/interfaces/gif.interface';
 
 @Component({
   selector: 'app-gif-list',
-  imports: [GifListItems],
   templateUrl: './gif-list.html',
-  styles: ``,
 })
-export class GifList { 
-    gifs = input.required<Gif[]>();
+export class GifList {
+  gifs = input.required<Gif[]>();
 
+  gifGroups = computed<Gif[][]>(() => {
+    const numGroups = 4;
+    const groups: Gif[][] = Array.from({ length: numGroups }, () => []);
+    this.gifs().forEach((gif, index) => {
+      groups[index % numGroups].push(gif);
+    });
+    return groups;
+  });
 }

@@ -18,7 +18,5 @@ export default class GifsHistory {
     inject(ActivatedRoute).params.pipe(map((params) => params['query'])),
   );
 
-  gifsByKey = computed(() => {
-    return this.gifService.getHistoryGifs(this.query());
-  });
+    gifsByKey = computed(() => this.gifService.getHistoryGifs(this.query()));
 }
