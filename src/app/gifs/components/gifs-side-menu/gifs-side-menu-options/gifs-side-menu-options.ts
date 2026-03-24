@@ -14,11 +14,9 @@ interface MenuOption {
   selector: 'app-gifs-side-menu-options',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './gifs-side-menu-options.html',
- 
 })
 export class GifsSideMenuOptions {
-
-  gifService = inject(GifService)
+  gifService = inject(GifService);
   menuOption: MenuOption[] = [
     {
       icon: 'fa-solid fa-arrow-up-right-dots',
@@ -32,7 +30,9 @@ export class GifsSideMenuOptions {
       subLabel: ' Buscar Gifs ',
       route: '/dashboard/search',
     },
-   
   ];
- 
+
+  deleteHistoryItem(query: string): void {
+    this.gifService.deleteHistoryItem(query);
+  }
 }

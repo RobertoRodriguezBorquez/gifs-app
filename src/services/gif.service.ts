@@ -134,15 +134,11 @@ export class GifService {
     return this.searchHistory()[query] ?? [];
   }
 
-  //   //guardar historial en local storage
-  //   saveLocalStore = effect(() => {
-  //     const history = this.searchHistory();
-  //     localStorage.setItem('gifs', JSON.stringify(history));
-  //   });
-  //   private looadFromLocalStorage() {
-  //     const saved = localStorage.getItem('gifs');
-  //     if (saved) {
-  //       this.searchHistory.set(JSON.parse(saved));
-  //     }
-  //   }
+  deleteHistoryItem(query: string): void {
+    this.searchHistory.update((history) => {
+      const newHistory = { ...history };
+      delete newHistory[query];
+      return newHistory;
+    });
+  }
 }
